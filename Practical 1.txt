@@ -19,6 +19,7 @@ User altered.
 
 5) SQL> exit; (save and close)
 
+6) SQL> alter user a2 account unlock; (login as system, then unlock user)
 
 
 
