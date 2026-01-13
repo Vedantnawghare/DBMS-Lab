@@ -1,0 +1,27 @@
+Enter user-name: System
+Enter password:
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.4.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+1) SQL> create user a2 identified by sit; (user creation with pass sit)
+
+2) SQL> grant connect, resource to a2; (permissions for a2)
+
+Grant succeeded.
+
+3) SQL> alter user a2 identified by Vedant;(to chnge password to Vedant)
+
+User altered.
+
+4) SQL>commit; (Save the chnges on database)
+
+5) SQL> exit; (save and close)
+
+6) SQL> alter user a2 account unlock; (login as system, then unlock user)
+
+
+
+
+
