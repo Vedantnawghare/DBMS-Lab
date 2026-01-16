@@ -1,0 +1,163 @@
+1. CREATE TABLE stud_info (
+    Prn INT,
+    name VARCHAR(50),
+    Maths1 INT,
+    Dbms INT,
+    Mes INT,
+    total INT,
+    percentage DECIMAL(5,2)
+);
+
+
+2. INSert student data
+INSERT INTO stud_info (Prn, name, Maths1, Dbms, Mes)
+VALUES (1, 'Vedant', 80, 75, 85);
+
+3. Calculate Total
+
+UPDATE stud_info
+SET total = Maths1 + Dbms + Mes;
+
+4. Calculate Percentage (assume total 100 marks each sub)
+
+UPDATE stud_info
+SET percentage = (total / 300.0) * 100;
+
+5.View result
+
+SELECT * FROM stud_info;
+
+6. 10 entries
+
+INSERT INTO stud_info VALUES (1, 'Vedant', 80, 75, 85, NULL, NULL);
+INSERT INTO stud_info VALUES (2, 'Shravani', 65, 70, 60, NULL, NULL);
+INSERT INTO stud_info VALUES (3, 'Harshini', 90, 88, 92, NULL, NULL);
+INSERT INTO stud_info VALUES (4, 'Mahek', 72, 68, 70, NULL, NULL);
+INSERT INTO stud_info VALUES (5, 'Salim', 85, 82, 88, NULL, NULL);
+INSERT INTO stud_info VALUES (6, 'Honey', 60, 65, 58, NULL, NULL);
+INSERT INTO stud_info VALUES (7, 'Sanskruti', 78, 80, 75, NULL, NULL);
+INSERT INTO stud_info VALUES (8, 'Ananya', 92, 90, 94, NULL, NULL);
+INSERT INTO stud_info VALUES (9, 'Namrata', 69, 72, 71, NULL, NULL);
+INSERT INTO stud_info VALUES (10,'Sejal', 88, 86, 90, NULL, NULL);
+
+
+7. Total for all 10
+UPDATE stud_info
+SET total = maths1 + dbms + mes;
+
+8. cal %
+UPDATE stud_info
+SET percentage = (total / 300.0) * 100;
+
+9. o/p proper 
+SET LINESIZE 200
+SET PAGESIZE 100
+
+COLUMN name FORMAT A10
+COLUMN percentage FORMAT 999.99
+
+SELECT * FROM stud_info;
+
+
+
+
+
+
+sir ans
+1. connect a2
+pass:- Vedant
+2. create a table st_info with 3 sub and cal. total and %
+insert atleast 10 entries
+
+3.
+create table sir_st_info (prn int, st_name varchar(20),m1 int, m2 int, m3 int);
+insert into sir_st_info(101,'xyz',56,78,87)  #erroe
+insert into sir_st_info values (101,'xyz',56,78,95);
+
+#but forgot to add total and %
+
+alter table sir_st_info add total int;
+alter table sir_st_info add perc number;
+
+desc tablename; #display the struct of the table i.e attirbutes od the table
+
+insert into sir_st_info (102,'bcd',56,78,95); #erroer
+
+insert into sir_st_info (102,'bcd',56,78,95,null,null);
+or 
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (102,'bcd',56,78,95);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (103,'cde',65,78,95);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (104,'def',56,88,95);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (105,'efg',56,98,95);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (106,'fgh',56,68,95);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (107,'ghi',56,78,55);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (108,'hij',56,78,85);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (109,'ijk',56,78,75);
+insert into sir_st_info(prn,st_name,m1,m2,m3) values (110,'jkl',56,78,45);
+
+print rows
+select * from sir_st_info;
+
+#to calculate total and % use update command
+
+update sir_st_info set total = m1+m2+m3;
+
+#to update multiple columns 
+
+update sir_st_info set perc = total / 3;
+
+or 
+update sir_st_info set total = m1+m2+m3,
+ perc = total / 3;
+
+#print
+select * from sir_st_info;
+
+
+
+
+#to drop a table use this:-
+drop table sir_st_info;
+
+#to delete all rows and cols i.e delete all the data in the table
+
+truncate table sir_st_info;
+
+
+
+
+
+# same for employee
+
+create table emp_info (emp_id int, emp_name varchar(20),hours int, days int);
+
+insert into emp_info values (101,'xyz',30,5);
+
+
+alter table emp_info add salary number;
+
+insert into emp_info(emp_id,emp_name,hours,days) values (102,'bcd',33,5);
+insert into emp_info(emp_id,emp_name,hours,days) values (103,'cde',38,6);
+insert into emp_info(emp_id,emp_name,hours,days) values (104,'def',24,4);
+insert into emp_info(emp_id,emp_name,hours,days) values (105,'efg',40,7);
+
+select * from emp_info;
+
+
+update emp_info set salary = hours * days;
+
+
+select * from emp_info;
+
+
+
+
+
+
+
+
+
+
+
+
+
