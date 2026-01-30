@@ -239,3 +239,62 @@ Create a section of this course in Fall 2017, with sec_id of 1, and with theloca
 
 INSERT INTO section (SECTION_ID,COURSE_ID,SEC_ID,SEMESTER,YEAR) 
 VALUES (8,'CS-101',1,'Fall',2017);              
+
+
+see alll tables
+select * from tab;
+
+desc tablename;
+
+select * from department;
+
+
+to find the last no. of tuple or highest primary key  value in the table:     #select max(PK_value) from tablename;
+
+=> select max(dept_id) from department; 
+
+to create sequence we will take emploee table:
+#CREATE SEQUQENCE
+
+create sequence emp_sq start with 1 increment by 1;
+
+create table emp(emp_id int primary key, name varchar2(10));
+
+insert into emp (emp_id,name) values (emp_sq.nextval,'1');
+insert into emp (emp_id,name) values (emp_sq.nextval,'2 a');
+insert into emp (emp_id,name) values (emp_sq.nextval,'3 a');
+insert into emp (emp_id,name) values (emp_sq.nextval,'4 A');
+insert into emp (emp_id,name) values (emp_sq.nextval,'5 D');
+insert into emp (emp_id,name) values (emp_sq.nextval,'6 FG');
+insert into emp (emp_id,name) values (emp_sq.nextval,'7 JKH');
+insert into emp (emp_id,name) values (emp_sq.nextval,'8 GHJ');
+insert into emp (emp_id,name) values (emp_sq.nextval,'9 FHG');
+insert into emp (emp_id,name) values (emp_sq.nextval,'10 ASDF');
+
+
+
+
+#Add a new column PINCODE with not null constraints to the above existing table.
+
+=> alter table emp add pincode int not null;
+#it will not run we have to drop data first or remove the constraint in the new field pincode.
+#add without deleting the data and adding new pincode field with constraint.
+=> alter table emp add pincode int;
+
+# to delete the data.
+=> truncate table tablename;
+after deleting the data u can add pincode with constraint.
+=> alter table emp add pincode int not null;
+
+=> insert into emp values(emp_sq.nextval,'name',223322);
+
+
+#to chnge the field name:
+=> alter table emp rename column name to emp_name;
+
+#to chnge the table name:
+=> rename emp to employee;
+
+#to drop the table using cascade constraints:
+
+DROP TABLE course CASCADE CONSTRAINTS;
