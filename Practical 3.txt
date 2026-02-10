@@ -58,3 +58,6 @@ INSERT INTO ENROLLMENT VALUES (10,106, 8, DATE '2024-07-05', 'ENROLLED');
 
 
 #
+=>select first_name, last_name,job,salary from emp;
+
+select first_name, last name, job, salary from emp where lower(job) ='clerk' or lower(job)='salesman' or lower(job) = 'analyst' and salary >=3000;
