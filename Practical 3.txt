@@ -61,3 +61,38 @@ INSERT INTO ENROLLMENT VALUES (10,106, 8, DATE '2024-07-05', 'ENROLLED');
 =>select first_name, last_name,job,salary from emp;
 
 select first_name, last name, job, salary from emp where lower(job) ='clerk' or lower(job)='salesman' or lower(job) = 'analyst' and salary >=3000;
+
+
+select first_name from emp where job = 'CLERK' AND salary > (select salary from emp where first_name = 'BOB') AND salary < (select salary from emp where first_name = 'JAMES');
+
+
+
+
+
+select e.first_name,e.salary, d.dept_name from emp e join departments d on e.deptno = d.deptno where e.salary = (select max(salary) from emp where deptno = e.deptno
+);
+
+
+# display those employees who are working in the dept where his manager is working
+
+=> select e.first_name as employee, m.first_name as manager, e.deptno from emp e join emp m on e.manager_id = m.emp_no where e.deptno = m.deptno;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
