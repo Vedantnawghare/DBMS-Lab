@@ -1,0 +1,80 @@
+#create a procedure and print hello world!
+SQL> create procedure hello_world
+  2  as
+  3  begin
+  4  dbms_output.Put_Line('Hello World!');
+  5  End;
+  6  /
+SQL> Exec hello_world
+SQL> set serveroutput ON
+SQL> Exec hello_world
+Hello World!
+
+#print hello world ! welcome to sit
+create or replace procedure hello_world
+  as
+  begin
+      dbms_output.put_line('Hello World! Welcome to SIT');
+  end;
+  /
+SQL> Exec hello_world
+
+#addition of 2 numbers
+#add cannot be used as file name as its a keyword
+
+SQL> create procedure add_numbers
+as 
+(a NUMBER,
+b NUMBER)
+begin 
+a:= 5;
+b:=10;
+    
+result NUMBER;
+result := a + b;
+dbms_output.put_line('Result: ' || result);
+end;
+/
+
+CREATE OR REPLACE PROCEDURE add_numbers
+AS
+    a NUMBER := 5;
+    b NUMBER := 10;
+    result NUMBER;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Result: ' || a + b);
+END;
+/ 
+
+SQL> create or replace procedure add_numbers(
+  2  a number,
+  3  b number)
+  4  as
+  5  begin
+  6  dbms_output.put_line('result: ' || (a+b));
+  7  end;
+  8  /
+
+
+SQL> exec add_numbers(34,16);
+result: 50
+
+
+#using c
+create or replace procedure add_numbers
+(a number,
+b number,
+c out number)
+as
+begin
+c := a+b;
+dbms_output.put_line('Result: ' || c);
+end;
+/
+
+DECLARE
+    result NUMBER;
+BEGIN
+    add_numbers(5, 10, result);
+END;
+/
