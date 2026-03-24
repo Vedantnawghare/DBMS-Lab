@@ -1,0 +1,36 @@
+c/r procedure excl(n in number)
+as
+Vname Employee.Emp_name%type;
+Vsalary Employee.Salary&Type;
+Begin
+Select emp_name, salary info Vname, Vsalary when emp_id=n;
+Dbms_o/pputline("emp name ='||v name);
+Dbms_o/pputline("emp salary ='||v salary);
+exception 
+when no data found then 
+Dbms_o/pputline("emp id not found");
+end;
+/
+
+#to print salary and name with emp_id and excluding the exceptions=> 
+create or replace procedure excl(n in number)
+as
+    vname    employees.emp_name%type;
+    vsalary  employees.salary%type;
+begin
+    select emp_name,salary
+    into vname, vsalary
+    from employees
+    where emp_id = n;
+
+    DBMS_OUTPUT.PUT_LINE('Emp Name = ' || vname);
+    DBMS_OUTPUT.PUT_LINE('Emp Salary = ' || vsalary);
+
+exception
+    when no_data_found then
+        DBMS_OUTPUT.PUT_LINE('Emp ID not found');
+end;
+/
+to run
+ set serveroutput on;
+exec excl(101);
