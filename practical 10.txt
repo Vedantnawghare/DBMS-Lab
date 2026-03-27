@@ -34,3 +34,18 @@ end;
 to run
  set serveroutput on;
 exec excl(101);
+
+Syntax
+C/r trugger tr_name
+before || after for each
+insert || update || delete on table_name
+begin
+code
+end;
+/
+
+create or replace trigger st_trigger
+before update on stud_info
+begin dbms_output.put_line('this is the statement level trigger fired');
+end;
+/
